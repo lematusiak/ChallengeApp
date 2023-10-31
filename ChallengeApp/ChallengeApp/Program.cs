@@ -1,75 +1,35 @@
-﻿// 2023.10.07 Zadanie nr 5
+﻿// 2023.10.28 Ruszamy po buksowaniu  - METODY
 
-int number = 780255628;
-string numberAsString = number.ToString();
-char [] letters = numberAsString.ToArray();
+// public void to metoda, która nie zwraca żadnej wartości
+// Używamy tej metody, gdy nie oczekujemy żadnego konkretnego wyniku tych działań
 
-int count0 = 0;
-int count1 = 0;
-int count2 = 0;
-int count3 = 0;
-int count4 = 0;
-int count5 = 0;
-int count6 = 0;
-int count7 = 0;
-int count8 = 0;
-int count9 = 0;
 
-foreach (char letter in letters)
+User user1 = new User("Adam", "123");
+User user2 = new User("Zuza", "123");
+User user3 = new User("Pola", "123");
+User user4 = new User("Olek", "123");
+
+user1.AddScore(5);
+user1.score(5555533);
+
+
+
+class User
 {
-    if (letter == '0')
+    private int score = 0; 
+    public User (string login, string password)
     {
-        count0++;
+        this.Login = login;
+        this.Password = password;
+        this.score = 0;
     }
-    else if (letter == '1')
+    public string Login { get; private set; }
+    public string Password { get; private set; }
+
+    public void AddScore(int number)
     {
-        count1++;
-    }
-    else if (letter == '2')
-    {
-        count2++;
+    this.score = this.score + number;
+ // this.score += number;            // to jest ten sam zapis, co linia powyżej
     }
 
-    else if (letter == '3')
-    {
-        count3++;
-    }
-    else if (letter == '4')
-    {
-        count4++;
-    }
-
-    else if (letter == '5')
-    {
-        count5++;
-    }
-    else if (letter == '6')
-    {
-        count6++;
-    }
-
-    else if (letter == '7')
-    {
-        count7++;
-    }
-    else if (letter == '8')
-    {
-        count8++;
-    }
-    else if (letter == '9')
-    {
-        count9++;
-    }
-};
-
-Console.WriteLine("Wynik dla liczby:" + number);
-Console.WriteLine("0 =>" + count0);
-Console.WriteLine("1 =>" + count1);
-Console.WriteLine("2 =>" + count2);
-Console.WriteLine("3 =>" + count3);
-Console.WriteLine("4 =>" + count4);
-Console.WriteLine("5 =>" + count5);
-Console.WriteLine("6 =>" + count6);
-Console.WriteLine("7 =>" + count7);
-Console.WriteLine("8 =>" + count8);
-Console.WriteLine("9 =>" + count9);
+} 
